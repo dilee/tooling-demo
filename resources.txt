@@ -1,0 +1,24 @@
+SOAP Service
+------------
+url: http://www.crcind.com/csp/samples/SOAP.Demo.cls
+SOAP Action: http://tempuri.org/SOAP.Demo.LookupCity
+
+Request Payload:
+<tem:LookupCity xmlns:tem="http://tempuri.org">
+        <tem:zip>CODE_HERE</tem:zip>
+</tem:LookupCity>
+
+
+API
+---
+Name: CityInformationAPI
+Context: /city
+Resource 
+Method: GET
+Url Template: /lookup/{zipCode}
+
+
+
+
+
+
