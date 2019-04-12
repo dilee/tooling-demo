@@ -1,0 +1,7 @@
+<LookupCityResponse>
+      <LookupCityResult>
+        <City>name</City>
+        <State>state</State>
+        <Zip>code</Zip>
+      </LookupCityResult>
+</LookupCityResponse>
