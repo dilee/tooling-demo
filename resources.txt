@@ -18,7 +18,9 @@ Method: GET
 Url Template: /lookup/{zipCode}
 
 
-
+Test
+----
+curl http://localhost:8290/city/lookup/60601
 
 
 
