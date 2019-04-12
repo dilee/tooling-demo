@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/city" name="CityInformationAPI" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET" uri-template="/lookup/{zipCode}">
+        <inSequence>
+            <payloadFactory media-type="xml">
+                <format>
+                    <tem:LookupCity xmlns:tem="http://tempuri.org">
+                        <tem:zip>$1</tem:zip>
+                    </tem:LookupCity>
+                </format>
+                <args>
+                    <arg evaluator="xml" expression="get-property('uri.var.zipCode')"/>
+                </args>
+            </payloadFactory>
+            <header name="Action" scope="default" value="http://tempuri.org/SOAP.Demo.LookupCity"/>
+            <property action="remove" name="REST_URL_POSTFIX" scope="default"/>
+            <!--property action="remove" name="NO_ENTITY_BODY" scope="axis2"/-->
+            <call>
+                <endpoint key="CityLookupEP"/>
+            </call>
+            <datamapper config="gov:datamapper/DMConfig.dmc" inputSchema="gov:datamapper/DMConfig_inputSchema.json" inputType="XML" outputSchema="gov:datamapper/DMConfig_outputSchema.json" outputType="JSON" xsltStyleSheet="gov:datamapper/DMConfig_xsltStyleSheet.xml"/>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

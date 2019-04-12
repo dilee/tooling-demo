@@ -1,0 +1,12 @@
+map_S_LookupCityResponse_S_root = function(){ 
+var outputroot={};
+
+outputroot =  {};
+outputroot.CityInformation =  {};
+outputroot.CityInformation.City = inputLookupCityResponse.LookupCityResult.City;
+outputroot.CityInformation.State = inputLookupCityResponse.LookupCityResult.State;
+return outputroot;
+};
+
+
+

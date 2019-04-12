@@ -1,0 +1,26 @@
+{
+  "$schema" : "http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#",
+  "id" : "http://wso2jsonschema.org",
+  "title" : "LookupCityResponse",
+  "type" : "object",
+  "properties" : {
+    "LookupCityResult" : {
+      "id" : "http://wso2jsonschema.org/LookupCityResult",
+      "type" : "object",
+      "properties" : {
+        "City" : {
+          "id" : "http://wso2jsonschema.org/LookupCityResult/City",
+          "type" : "string"
+        },
+        "State" : {
+          "id" : "http://wso2jsonschema.org/LookupCityResult/State",
+          "type" : "string"
+        },
+        "Zip" : {
+          "id" : "http://wso2jsonschema.org/LookupCityResult/Zip",
+          "type" : "string"
+        }
+      }
+    }
+  }
+}
